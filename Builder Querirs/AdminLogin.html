@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin login – BuilderQueries</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Css/Shared.css" />
+  <link rel="stylesheet" href="./Css/AdminAuth.css" />
+</head>
+<body class="page-body">
+
+  <a class="admin-auth-logo" href="index.html">Builder<span>Queries</span></a>
+  
+  <div class="admin-auth-page">
+    <div class="admin-auth-card">
+      <span class="admin-auth-back" onclick="window.location.href='index.html'">← Back to home</span>
+      <h2>Admin console</h2>
+      <p class="admin-auth-sub">Log in to manage users, projects and bookings</p>
+
+      <div id="login-error"></div>
+
+      <div class="form-group">
+        <label for="li-username">Username</label>
+        <input type="text" id="li-username" placeholder="admin.jane" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label for="li-password">Password</label>
+        <input type="password" id="li-password" placeholder="Your password" autocomplete="current-password" />
+      </div>
+
+      <button class="btn-submit" onclick="adminLogin()">Log in</button>
+
+      <p class="admin-auth-switch">
+        First time here? <a onclick="window.location.href='AdminSignUp.html'">Create an admin account</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="./js/AdminAuth.js"></script>
+</body>
+</html>

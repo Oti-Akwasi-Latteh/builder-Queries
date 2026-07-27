@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create admin account – BuilderQueries</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Css/Shared.css" />
+  <link rel="stylesheet" href="./Css/AdminAuth.css" />
+</head>
+<body class="page-body">
+
+  <a class="admin-auth-logo" href="index.html">Builder<span>Queries</span></a>
+  <span class="admin-auth-tag">Admin</span>
+
+  <div class="admin-auth-page">
+    <div class="admin-auth-card">
+      <span class="admin-auth-back" onclick="window.location.href='AdminLogin.html'">← Back to log in</span>
+      <h2>Create admin account</h2>
+      <p class="admin-auth-sub">Set up access to the BuilderQueries console</p>
+
+      <div id="signup-error"></div>
+
+      <div class="form-group">
+        <label for="su-name">Full name</label>
+        <input type="text" id="su-name" placeholder="Jane Mensah" autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label for="su-username">Username</label>
+        <input type="text" id="su-username" placeholder="admin.jane" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label for="su-email">Email</label>
+        <input type="email" id="su-email" placeholder="jane@builderqueries.com" autocomplete="email" />
+      </div>
+      <div class="admin-form-row">
+        <div class="form-group">
+          <label for="su-password">Password</label>
+          <input type="password" id="su-password" placeholder="At least 6 characters" autocomplete="new-password" />
+        </div>
+        <div class="form-group">
+          <label for="su-password2">Confirm</label>
+          <input type="password" id="su-password2" placeholder="Re-enter password" autocomplete="new-password" />
+        </div>
+      </div>
+
+      <button class="btn-submit" onclick="adminSignup()">Create account</button>
+
+      <p class="admin-auth-note">Anyone with this login can manage users, projects and bookings — share it only with your team.</p>
+
+      <p class="admin-auth-switch">
+        Already have access? <a onclick="window.location.href='AdminLogin.html'">Log in</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="./js/AdminAuth.js"></script>
+</body>
+</html>
