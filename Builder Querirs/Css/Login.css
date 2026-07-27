@@ -1,0 +1,180 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--charcoal);
+    color: var(--charcoal);
+    min-height: 100vh;
+  }
+
+
+
+ :root {
+    --orange: #E8530A;
+    --orange-light: #FDF0EB;
+    --orange-dark: #B03E06;
+    --charcoal: #1A1A18;
+    --warm-gray: #F5F3EF;
+    --mid-gray: #8C8C87;
+    --border: rgba(26,26,24,0.12);
+    --white: #FFFFFF;
+    --success: #2D7A4F;
+  }
+  *, *::before, *::after {
+     box-sizing: border-box;
+      margin: 0; padding: 0;
+     }
+
+      /* ─── AUTH PAGES ───
+     Matches on the shared .page class (used by Login.html, ForgotPassword.html,
+     ResetPassword.html, etc.) instead of a hardcoded list of #ids, so every
+     current and future auth page gets centered automatically. */
+ .page {
+    background: var(--warm-gray);
+    align-items: center;
+    display: flex; 
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    flex-direction: column; 
+    min-height: 100vh;
+  }
+
+  .auth-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+    width: 100%;
+    max-width: 440px;
+    padding: 2.5rem;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .auth-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+    position: absolute;   /* removes it from flex flow */
+    top: 0.5px;            /* distance from top */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .auth-logo span { color: var(--orange); }
+
+  .auth-card h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+  .auth-card .auth-sub {
+    font-size: 0.9rem;
+    color: var(--mid-gray);
+    margin-bottom: 1.75rem;
+  }
+
+  /* OAuth Buttons */
+  .oauth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    margin-bottom: 0.65rem;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: var(--charcoal);
+  }
+  .oauth-btn:hover { background: var(--warm-gray); border-color: rgba(26,26,24,0.25); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+
+  .oauth-btn svg { flex-shrink: 0; }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.25rem 0;
+    color: var(--mid-gray);
+    font-size: 0.8rem;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Form */
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: var(--charcoal);
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    background: var(--white);
+    color: var(--charcoal);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(232,83,10,0.08); }
+
+  .form-row { display: flex; gap: 0.75rem; }
+  .form-row .form-group { flex: 1; }
+
+  .btn-submit {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+  .auth-switch {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    margin-top: 1.25rem;
+  }
+  .auth-switch a { color: var(--orange); text-decoration: none; font-weight: 500; cursor: pointer; }
+  .auth-switch a:hover { text-decoration: underline; }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    text-decoration: none;
+    margin-bottom: 1.75rem;
+    cursor: pointer;
+  }
+  .back-link:hover { color: var(--charcoal); }

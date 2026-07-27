@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════════════════
+   Services.css  —  Styles for index.html (Services page)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Search bar ── */
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 580px;
+  margin: 1.5rem auto 0;
+  background: var(--bg-input);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+.search-bar input {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: transparent;
+  outline: none;
+}
+.search-bar input::placeholder { color: var(--text-secondary); }
+.search-bar button {
+  padding: 0.8rem 1.5rem;
+  background: var(--orange);
+  border: none; color: #fff;
+  font-weight: 500; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.search-bar button:hover { background: var(--orange-dark); }
+
+/* ── Services grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.service-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1.5px solid var(--border-color);
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.25s;
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); border-color: var(--orange); }
+
+.service-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: var(--orange-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+}
+[data-theme="dark"] .service-icon-wrap { background: rgba(232,83,10,0.15); }
+.service-card .s-name { font-weight: 500; font-size: 0.9rem; line-height: 1.3; color: var(--text-primary); text-align: center; }
+.service-card .s-count { font-size: 0.75rem; color: var(--text-secondary); }
+
+.no-results { color: var(--text-secondary); font-size: 0.9rem; padding: 1rem 0; }
+
+/* ── Pros grid ── */
+.pros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.pro-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.25s;
+  cursor: pointer;
+}
+.pro-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.pro-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; }
+.pro-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 1rem; color: #fff; flex-shrink: 0;
+}
+.pro-avatar.teal   { background: #1D9E75; }
+.pro-avatar.blue   { background: #185FA5; }
+.pro-avatar.purple { background: #534AB7; }
+.pro-name { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.15rem; color: var(--text-primary); }
+.pro-role { font-size: 0.8rem; color: var(--text-secondary); }
+.pro-stars { color: #F59E0B; font-size: 0.85rem; }
+.pro-stars span { color: var(--text-secondary); }
+.pro-badge {
+  display: inline-block;
+  background: var(--orange-light); color: var(--orange-dark);
+  border-radius: 100px; padding: 0.2rem 0.6rem;
+  font-size: 0.75rem; font-weight: 500; margin-top: 0.6rem;
+}
+[data-theme="dark"] .pro-badge { background: rgba(232,83,10,0.15); }
+.pro-badge.verified { background: #EDFAF3; color: #2D7A4F; }
+[data-theme="dark"] .pro-badge.verified { background: rgba(45,122,79,0.15); }
+.pro-rate { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; }
+.pro-rate strong { color: var(--text-primary); }
+
+/* ── How it works ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.how-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  transition: background 0.25s;
+}
+.how-num   { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--orange); margin-bottom: 0.5rem; }
+.how-title { font-weight: 500; margin-bottom: 0.4rem; color: var(--text-primary); }
+.how-desc  { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }

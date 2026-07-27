@@ -1,0 +1,145 @@
+
+/* ═══════════════════════════════════════════════════════════
+   ServiceDetail.css  —  Styles for ServiceDetail.html
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.service-detail-hero {
+  background: var(--bg-hero);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 9rem 2.5rem 2rem;
+  transition: background 0.25s;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: black;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; 
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+}
+.back-btn:hover { background: rgba(255,255,255,0.18); color: #fff; }
+
+.svc-hero-inner { display: flex; align-items: center; gap: 1rem; }
+.svc-hero-icon {
+  width: 60px; height: 60px;
+  background: rgba(232,83,10,0.2);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; flex-shrink: 0;
+}
+.service-detail-hero h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 1.6rem;
+  color: #fff; margin-bottom: 0.25rem;
+}
+.svc-hero-sub { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+/* ── Filters ── */
+.svc-filters { display: flex; gap: 1rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
+.filter-group { display: flex; flex-direction: column; gap: 0.3rem; }
+.filter-group label {
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.filter-group select {
+  padding: 0.55rem 2.2rem 0.55rem 0.8rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  outline: none; cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%238C8C87' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  transition: border-color 0.2s;
+}
+.filter-group select:focus { border-color: var(--orange); }
+
+/* ── Contractors grid ── */
+.contractors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.contractor-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: 18px;
+  padding: 1.4rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.25s;
+}
+.contractor-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.09); border-color: var(--orange); }
+
+.cc-header { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; }
+.cc-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1rem; color: #fff; flex-shrink: 0;
+}
+.cc-name     { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; color: var(--text-primary); }
+.cc-location { font-size: 0.8rem; color: var(--text-secondary); }
+.cc-stars    { color: #F59E0B; font-size: 0.85rem; margin-bottom: 0.5rem; }
+.cc-stars span { color: var(--text-secondary); }
+
+.cc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.85rem; }
+.cc-tag {
+  background: var(--orange-light); color: var(--orange-dark);
+  border-radius: 100px; padding: 0.2rem 0.6rem;
+  font-size: 0.73rem; font-weight: 500;
+}
+[data-theme="dark"] .cc-tag { background: rgba(232,83,10,0.15); }
+
+.pro-badge { display: inline-block; background: var(--orange-light); color: var(--orange-dark); border-radius: 100px; padding: 0.2rem 0.6rem; font-size: 0.73rem; font-weight: 500; }
+.pro-badge.verified { background: #EDFAF3; color: #2D7A4F; }
+[data-theme="dark"] .pro-badge.verified { background: rgba(45,122,79,0.15); }
+
+.cc-footer { display: flex; align-items: center; justify-content: space-between; }
+.cc-rate { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+.cc-rate span { font-size: 0.8rem; font-weight: 400; color: var(--text-secondary); }
+.cc-book-btn {
+  background: var(--orange); color: #fff;
+  border: none; border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+}
+.cc-book-btn:hover { background: var(--orange-dark); transform: scale(1.02); }
+
+/* ── Booking strip ── */
+.booking-pro-info {
+  display: flex; align-items: center; gap: 0.85rem;
+  background: var(--warm-gray); border-radius: 14px;
+  padding: 1rem; margin-bottom: 1.25rem;
+}
+.bk-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1rem; color: #fff; flex-shrink: 0;
+}
+.bk-name { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+.bk-meta { font-size: 0.8rem; color: var(--text-secondary); }
+.bk-rate { margin-left: auto; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--orange); white-space: nowrap; }
+
+/* ── Empty state ── */
+.empty-state { grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--text-secondary); }
+.empty-state-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+@media (max-width: 768px) { .service-detail-hero { padding: 1.25rem 1rem 1.5rem; } }
